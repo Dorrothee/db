@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 -- Active: 1706531880645@@127.0.0.1@5432@cosmetics
+=======
+CREATE DATABASE Cosmetics;
+
+>>>>>>> e49d62923da62fb4c61a067e1358d75173ad3aee
 CREATE TABLE "Product" (
   "product_id" integer PRIMARY KEY,
   "brand_id" integer,
@@ -54,4 +59,8 @@ VALUES
 INSERT INTO "Product" ("brand_id", "category_id", "product_name", "product_type", "product_price", "product_id")
 VALUES
   (1, 1, 'Permanent mechanical lip pencil Patricia Ledo Lip Liner with a sharpener, tone 00, 0.4 g', 'Lip Liner', 2.64, 1),
+<<<<<<< HEAD
   (3, 4, 'Aloe gel Holika Holika Aloe 99% Soothing Gel soothing, moisturizing, 55 ml', 'Soothing Gel', 2.38, 2);
+=======
+  (3, 4, 'Aloe gel Holika Holika Aloe 99% Soothing Gel soothing, moisturizing, 55 ml', 'Soothing Gel', 2.38, 2);
+>>>>>>> e49d62923da62fb4c61a067e1358d75173ad3aee
