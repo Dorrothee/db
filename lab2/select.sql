@@ -1,4 +1,4 @@
---1-4 Select all records (first 20) from our database's tables (1-4)
+--1-4 Select first 20 records from our database's tables (1-4)
 SELECT * FROM "Brand" LIMIT 20;
 SELECT * FROM "Category" LIMIT 20;
 SELECT * FROM "Inventory" LIMIT 20;
