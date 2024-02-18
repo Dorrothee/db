@@ -1,3 +1,8 @@
+-- Лабораторна робота № 2
+-- З дисципліни "Бази даних та інформаційні системи"
+-- Студентки групи МІТ-31 Борук Дарини
+
+
 --1-4 Select first 20 records from our database's tables (1-4)
 SELECT * FROM "Brand" LIMIT 20;
 SELECT * FROM "Category" LIMIT 20;
@@ -701,3 +706,7 @@ JOIN "Category" c USING (category_id)
 JOIN "Brand" b USING (brand_id)
 WHERE c.category_category LIKE 'Hair%' AND b.brand_country = 'South Korea'
 GROUP BY r.username, c.category_category;
+
+
+-- Висновки: у ході лабораторної роботи було досліджено роботу з базами даних, використовуючи запит SELECT та його операторИ (JOIN, WHERE, GROUP BY, HAVING, ORDER BY),
+-- у результаті якої було створено 100 SQL запитів.
