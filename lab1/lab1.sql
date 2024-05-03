@@ -9,6 +9,10 @@ CREATE TABLE "Product" (
   "product_price" float
 );
 
+SELECT * FROM "Product";
+DROP TABLE "Product";
+
+
 CREATE TABLE "Brand" (
   "brand_id" SERIAL PRIMARY KEY,
   "brand_name" varchar,

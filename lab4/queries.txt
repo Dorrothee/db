@@ -1,0 +1,65 @@
+db.movies.find({"category":"Drama"})
+db.movies.find({"imdb":{"$lt":8.0}})
+db.movies.find({"director":"Christopher Nolan"})
+db.movies.find({
+  "$and": [
+    {"imdb":{"$gt": 8.0 }},
+    {"publishedDate":{"$gt":new Date("2008-01-01T00:00:00Z")}}
+  ]
+})
+db.movies.find({"title":{"$regex":"^The Lord"}})
+db.movies.find({"shortDes":{"$exists":true}})
+
+-- amount of movies for each category --
+db.movies.aggregate([
+  {$group:{_id:"$category", amount:{$sum:1}}}
+])
+-- avg imdb for each category movie --
+db.movies.aggregate([
+  {$group:{_id:"$category", avgIMDB:{$avg:"$imdb"}}},
+  {$sort:{imdb:-1}}
+])
+-- movies with max and min imdb --
+db.movies.aggregate([
+  {$group:{_id:null, maxIMDB:{$max:"$imdb"}, minIMDB:{$min:"$imdb"}}}
+])
+-- list of unique actors and movies --
+db.movies.aggregate([
+  {$unwind:"$actors"},
+  {$group:{_id:null, uniqueActors:{$addToSet:"$actors"}, uniqueCategories:{$addToSet:"$category"}}}
+])
+-- top 3 directors based on movies amount --
+db.movies.aggregate([
+  {$group:{_id: "$director", movies:{$sum:1}}},
+  {$sort:{movies:-1}},
+  {$limit:3}
+])
+-- released movies per year --
+db.movies.aggregate([
+  {$group:{_id:{$year:"$publishedDate"}, movies:{$sum:1}}},
+  {$sort:{_id:1}}
+])
+-- top 3 actors based on movies amount --
+db.movies.aggregate([
+  {$unwind:"$actors"},
+  {$group:{_id:"$actors", movies:{$sum:1}}},
+  {$sort:{movies:-1}},
+  {$limit:3}
+])
+-- top 3 actors based on movies amount with theirs list of movies --
+db.movies.aggregate([
+  {$unwind:"$actors"},
+  {$group:{_id:"$actors", count:{$sum:1}, movies:{$push:"$title"}}},
+  {$sort:{count:-1}},
+  {$limit:3}
+])
+-- list only short info about the movie --
+db.movies.aggregate([
+  {$project:{
+      "title": 1,
+      "director": 1,
+      "publishedDate": 1
+    }
+  },
+  {$limit:5}
+])

@@ -1,0 +1,38 @@
+.fullscreen-background {
+    background-image: url('../../assets/home_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+.jumbotron {
+    padding: 10px;
+    text-align: center;
+    color: rgb(34, 15, 35);
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(92, 83, 153, 0.721);
+  }
+  
+.jumbotron h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  
+@media (max-width: 768px) {
+    .jumbotron {
+      padding: 30px;
+    }
+  
+    .jumbotron h1 {
+      font-size: 2.5em;
+    }
+  }
+  

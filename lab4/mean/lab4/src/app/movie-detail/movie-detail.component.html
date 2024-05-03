@@ -1,0 +1,43 @@
+<div>
+    <form>
+        <div *ngIf="editTitle" class="form-group">
+            <label>Title</label>
+            <input type="input" class="form-control" name="title" required placeholder="title"
+            [(ngModel)]="movie.title">
+        </div>
+        <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{movie.title}}</h3>
+        <div class="form-group">
+            <label>IMDB</label>
+            <input type="number" class="form-control" name="imdb" required placeholder="imdb"
+            [(ngModel)]="movie.imdb">
+        </div>
+        <div class="form-group">
+            <label>Release Date</label>
+            <input type="input" class="form-control" name="publishedDate" required placeholder="publishedDate"
+            [(ngModel)]="movie.publishedDate">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" rows="2" name="shortDes" required placeholder="shortDes"
+            [(ngModel)]="movie.shortDes"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <input type="input" class="form-control" name="category" required placeholder="category"
+            [(ngModel)]="movie.category">
+        </div>
+        <div class="form-group">
+            <label>Director</label>
+            <input type="input" class="form-control" name="director" required placeholder="director"
+            [(ngModel)]="movie.director">
+        </div>
+        <div class="form-group">
+            <label>Cast</label>
+            <input type="input" class="form-control" name="actors" required placeholder="actors"
+            [(ngModel)]="movie.actors">
+        </div>
+        <button type="button" (click)="updateMovie()" class="btn btn-primary">Update</button>
+        <button type="button" (click)="deleteMovie()" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+

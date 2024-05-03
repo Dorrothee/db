@@ -1,0 +1,42 @@
+  .navbar {
+    background-color: #333;
+    border-bottom: 2px solid #444;
+  }
+  
+  .navbar-brand {
+    color: #f9f9f9;
+    font-weight: bold;
+  }
+  
+  .navbar-brand:hover {
+    color: #ddd;
+  }
+  
+  .navbar-nav > li > a {
+    color: #f9f9f9;
+    padding: 10px 15px;
+    text-transform: uppercase;
+  }
+  
+  .navbar-nav > li > a:hover {
+    color: #ddd;
+    background-color: #444;
+  }
+  
+  .navbar-nav > .active > a {
+    color: #fff;
+    background-color: #555;
+  }
+  
+  .container {
+    padding-top: 20px;
+  }
+  
+
+  router-outlet {
+    display: block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+  }
+  

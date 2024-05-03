@@ -321,7 +321,6 @@ VALUES
   (223, 90, 'Cottonwood Mall'),
   (224, 220, 'Willowbrook Mall');
 
-
 INSERT INTO "Product" ("brand_id", "category_id", "product_name", "product_type", "product_price", "product_id")
 VALUES
   (1, 5, 'OPI Nail Lacquer', 'Nail Polish', 10.50, 3),
@@ -557,6 +556,8 @@ CREATE TABLE "Reviews" (
   "product_id" INTEGER,
   FOREIGN KEY ("product_id") REFERENCES "Product" ("product_id")
 );
+
+drop table "Reviews";
 
 INSERT INTO "Reviews" (username, rating, status, date, product_id) VALUES
     ('AdventurousAlice', 4, 'approved', '2024-02-17', 1),
